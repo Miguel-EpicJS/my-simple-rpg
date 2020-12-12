@@ -10,7 +10,12 @@ compile:
 	cd src/ && g++ main.cpp BasicPerson/obj/*.o Battle/obj/*.o -o main
 run:
 	cd src/ && ./main
-remove:
+remove-all:
 	rm src/main
 	rm src/BasicPerson/obj/*
 	rm src/Battle/obj/*
+remove-obj:
+	rm src/BasicPerson/obj/*
+	rm src/Battle/obj/*
+remove-main:
+	rm src/main
