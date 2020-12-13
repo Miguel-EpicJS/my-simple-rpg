@@ -6,16 +6,20 @@ class Battle
         while true
             puts "Player #{player.name} Hp #{player.hp}"
             puts "Enemy #{enemy.name} Hp #{enemy.hp}"
-            puts "Type 1 for attack and 0 to run: "
+            puts "Type 2 for healing, 1 for attack and 0 to run: "
             print "> "
             cmd = gets.chomp.to_i
             if cmd == 1
                 puts "Player's attack"
                 enemy.hp -= player.attack()
+            elsif cmd == 2
+                puts "Healing..."
+                player.hp += player.healing
             elsif cmd == 0
                 puts "You escape"
                 break
             end
+            
             if player.hp < 0
                 puts "You dead"
                 break

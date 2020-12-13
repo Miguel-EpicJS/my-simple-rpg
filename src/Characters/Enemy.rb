@@ -6,4 +6,8 @@ class Enemy < Characters
         dice = Dice.new
         return (@str * @speed).to_f * (dice.generate(20).to_f / 10) 
     end
+    def healing()
+        dice = Dice.new
+        return dice.generate(20)
+    end
 end
