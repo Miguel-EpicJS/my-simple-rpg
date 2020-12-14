@@ -24,10 +24,14 @@ class Loop
                 battle = Battle.new
                 @player, goblin = battle.battle(@player, goblin)
             elsif cmd == 2
-                puts "Healing..."
-                @player.hp += @player.healing
-                sleep(2)
-                puts "Your hp is #{@player.hp}"
+                if @player.hp < @player.maxHp
+                    puts "Healing..."
+                    @player.hp += @player.healing
+                    sleep(2)
+                    puts "Your hp is #{@player.hp}"
+                else
+                    puts "You have the max health"
+                end
             elsif cmd == 3
                 puts "Exiting"
                 break

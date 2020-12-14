@@ -1,10 +1,12 @@
 class Characters
     attr_accessor :name, :str, :hp, :speed, :gold
+    attr_reader :maxHp
 
     def initialize(name, str, hp, speed, gold)
         @name = name
         @str = str
         @hp = hp
+        @maxHp = hp
         @speed = speed
         @gold = gold
     end

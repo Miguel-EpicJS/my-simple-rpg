@@ -13,8 +13,14 @@ class Battle
                 puts "Player's attack"
                 enemy.hp -= player.attack()
             elsif cmd == 2
-                puts "Healing..."
-                player.hp += player.healing
+                if player.hp < player.maxHp
+                    puts "Healing..."
+                    player.hp += player.healing
+                    sleep(2)
+                    puts "Your hp is #{player.hp}"
+                else
+                    puts "You have the max health"
+                end
             elsif cmd == 0
                 puts "You escape"
                 break
