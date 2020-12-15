@@ -3,8 +3,7 @@ require_relative 'Game/Loop'
 require_relative 'Dashboard/Dashboard'
 
 miguel = Player.new('Miguel', 20, 120, 1.3, 50)
-logic = Loop.new(miguel)
 dashboard = Dashboard.new
-dashboard.DashboardPlayer
-dashboard.DashboardEnemy
+enemies = dashboard.DashboardEnemy
+logic = Loop.new(miguel, enemies)
 logic.logic

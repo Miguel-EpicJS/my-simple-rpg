@@ -1,7 +1,8 @@
 require_relative '../Battle/Battle'
 require_relative '../Characters/Enemy'
 class Loop
-    def initialize(player)
+    def initialize(player, enemies)
+        @enemies = enemies
         @player = player
         #Make somethings here
         self.loop
@@ -19,10 +20,10 @@ class Loop
                 sleep(0.2)
                 puts "Searching..."
                 sleep(2)
-                puts "We found a goblin!"
-                goblin = Enemy.new('Goblin', 10, 100, 1.1, 50)
+                enemy = @enemies.sample
+                puts "We found a #{enemy.name}!"
                 battle = Battle.new
-                @player, goblin = battle.battle(@player, goblin)
+                @player, enemy = battle.battle(@player, enemy)
             elsif cmd == 2
                 if @player.hp < @player.maxHp
                     puts "Healing..."

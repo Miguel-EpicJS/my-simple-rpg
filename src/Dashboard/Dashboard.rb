@@ -31,6 +31,7 @@ class Dashboard
                 @players.append(@player)
             end
         end
+        return @players
     end
     def DashboardEnemy
         @enemies = []
@@ -60,14 +61,6 @@ class Dashboard
                 @enemies.append(@enemy)
             end
         end 
-    end
-    def getPlayers
-        return @players
-    end
-    def getEnemies
-        return @enemies
-    end
-    def getAll
-        return @players, @enemies
+        @enemies
     end
 end
