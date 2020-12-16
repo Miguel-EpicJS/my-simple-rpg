@@ -14,20 +14,17 @@ class Dashboard
             elsif @cmd == 2
                 print "Type the name of the new player: "
                 @pname = gets.chomp
-                puts ""
                 print "Type the str of the new player: "
                 @pstr = gets.chomp.to_i
-                puts ""
                 print "Type the hp of the new player: "
                 @php = gets.chomp.to_i
-                puts ""
                 print "Type the speed of the new player: "
                 @pspeed = gets.chomp.to_i
-                puts ""
                 print "Type the gold of the new player: "
                 @pgold = gets.chomp.to_i
-                puts ""
-                @player = Player.new(@pname, @pstr, @php, @pspeed, @pgold)
+                print "Type the level of the new player: "
+                @plevel = gets.chomp.to_i
+                @player = Player.new(@pname, @pstr, @php, @pspeed, @pgold, @plevel)
                 @players.append(@player)
             end
         end
@@ -44,20 +41,17 @@ class Dashboard
             elsif @cmd == 2
                 print "Type the name of the new enemy: "
                 @ename = gets.chomp
-                puts ""
                 print "Type the str of the new enemy: "
                 @estr = gets.chomp.to_i
-                puts ""
                 print "Type the hp of the new enemy: "
                 @ehp = gets.chomp.to_i
-                puts ""
                 print "Type the speed of the new enemy: "
                 @espeed = gets.chomp.to_i
-                puts ""
                 print "Type the gold of the new enemy: "
                 @egold = gets.chomp.to_i
-                puts ""
-                @enemy = Enemy.new(@ename, @estr, @ehp, @espeed, @egold)
+                print "Type the level of the new enemy: "
+                @elevel = gets.chomp.to_i
+                @enemy = Enemy.new(@ename, @estr, @ehp, @espeed, @egold, @elevel)
                 @enemies.append(@enemy)
             end
         end 
