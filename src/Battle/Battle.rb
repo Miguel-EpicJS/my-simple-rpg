@@ -1,5 +1,6 @@
 class Battle
     def battle(player, enemy)
+        enemy.hp = enemy.maxHp
         puts 'Battle started'
         cmd = -1
         who_is_dead = 0
@@ -43,6 +44,13 @@ class Battle
             puts "#" * 25
             puts "Get's 50 gold coins!"
             player.gold += 50
+            puts "You ear #{enemy.maxXp / 2} xp"
+            player.xp += enemy.maxXp / 2
+            levelUp = player.upLevel
+            if levelUp
+                puts "WOW, you up your level, your stats is"
+                player.show
+            end
         end
         puts "#" * 25
         puts 'Battle finished'
