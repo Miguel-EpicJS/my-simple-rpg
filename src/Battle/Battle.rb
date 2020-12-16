@@ -46,9 +46,12 @@ class Battle
             player.gold += 50
             puts "You ear #{enemy.maxXp / 2} xp"
             player.xp += enemy.maxXp / 2
-            levelUp = player.upLevel
-            if levelUp
-                puts "WOW, you up your level, your stats is"
+            levelUp = 0
+            while player.upLevel
+                levelUp += 1
+            end
+            if levelUp > 0
+                puts "WOW, you up #{levelUp} your level, your stats is"
                 player.show
             end
         end
