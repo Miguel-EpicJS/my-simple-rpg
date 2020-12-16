@@ -14,11 +14,14 @@ class Characters
         @maxXp = (@level+1) ** 5
     end
     def show()
-        puts "#{@name}"
-        puts "#{@str}"
-        puts "#{@hp}"
-        puts "#{@speed}"
-        puts "#{@gold}"
+        puts "Name: #{@name}"
+        puts "Str: #{@str}"
+        puts "Hp: #{@hp}"
+        puts "Speed: #{@speed}"
+        puts "Gold: #{@gold}"
+        puts "Level: #{@level}"
+        puts "MaxXP: #{@maxXp}"
+        puts "XP: #{@xp}"
     end
     def upLevel
         if @xp >= maxXp
