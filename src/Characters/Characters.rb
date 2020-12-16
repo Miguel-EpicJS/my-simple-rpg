@@ -30,11 +30,10 @@ class Characters
             @maxXp = (@level+1) ** 5
 
             @name += @name * (10 / 100) 
-            @str += @name * (10 / 100) 
-            @hp += @name * (10 / 100) 
-            @maxHp += @name * (10 / 100) 
-            @speed += @name * (10 / 100) 
-            @gold += @name * (10 / 100) 
+            @str += @str * (10 / 100) 
+            @hp += @hp * (10 / 100) 
+            @maxHp += @maxHp * (10 / 100) 
+            @speed += @speed * (5 / 100) 
             return true
         end
         return false
