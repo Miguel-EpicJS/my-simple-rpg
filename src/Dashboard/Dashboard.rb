@@ -31,7 +31,10 @@ class Dashboard
         return @players
     end
     def DashboardEnemy
-        @enemies = []
+        @goblin = Enemy.new("goblin", 5, 75, 1.2, 25, 1)
+        @rat = Enemy.new("rat", 3, 25, 1.8, 10, 1)
+        @goblinLeader = Enemy.new("goblin leader", 10, 125, 1.5, 50, 2)
+        @enemies = [@goblin,@rat, @goblinLeader]
         @cmd = 0
         while true
             puts "Type 1 for exit and 2 for create a new enemy"
