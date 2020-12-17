@@ -1,9 +1,12 @@
 require_relative '../Battle/Battle'
 require_relative '../Characters/Enemy'
+require_relative './Store'
+
 class Loop
     def initialize(player, enemies)
         @enemies = enemies
         @player = player
+        @store = Store.new
         #Make somethings here
         self.loop
     end
@@ -14,6 +17,7 @@ class Loop
             puts "Type 1 to search an enemy"
             puts "Type 2 to recover health"
             puts "Type 3 to exit"
+            puts "Type 4 to open shop"
             cmd = gets.chomp.to_i
             if cmd == 1
                 puts "Searching..."
@@ -36,6 +40,8 @@ class Loop
             elsif cmd == 3
                 puts "Exiting"
                 break
+            elsif cmd == 4
+                @store.open(@player)
             end
         end
         return @player
