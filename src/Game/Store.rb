@@ -23,6 +23,10 @@ class Store
             if @buy == "Y"
                 player.xp += 100
                 player.gold -= 20
+                if player.upLevel
+                    puts "Nice, you up your level, your stats is:"
+                    player.show
+                end
             end
         end
     end
