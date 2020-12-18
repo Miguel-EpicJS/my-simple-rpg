@@ -18,6 +18,7 @@ class Loop
             puts "Type 2 to recover health"
             puts "Type 3 to exit"
             puts "Type 4 to open shop"
+            puts "Type 5 show your stats"
             cmd = gets.chomp.to_i
             if cmd == 1
                 puts "Searching..."
@@ -42,6 +43,8 @@ class Loop
                 break
             elsif cmd == 4
                 @store.open(@player)
+            elsif cmd == 5
+                @player.show
             end
         end
         return @player
